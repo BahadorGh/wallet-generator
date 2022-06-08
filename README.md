@@ -6,14 +6,14 @@ Easily generate wallet with ethers package, bsc ( and other similar networks)
 - `mkdir walletGenerator && cd walletGenerator`
 - `npm init -y`
 - `npm install ethers`
-- create new js file and insert codes as below:
+- create new js file(such as "walletgenerator.js").
+
+### Then, insert codes as below:
 
 ```
 var ethers = require("ethers");
 var crypto = require("crypto");
-````
 
-```
 var id = crypto.randomBytes(32).toString('hex'); // generating 32bytes random string 
 var privateKey = '0x' + id; // 0x is used to make private key in hexadecimal
 
@@ -22,6 +22,8 @@ console.log("PrivateKey(don't share this with anyone!): ", privateKey);
 var wallet = new ethers.Wallet(privateKey);
 console.log("Wallet address:", wallet.address);
 ```
+
+- Finally : `node walletgenerator`
 
 After generating wallet you will have public and private key of your newly generated wallet.
 To check your wallet, you can test assets in it from explorer:
